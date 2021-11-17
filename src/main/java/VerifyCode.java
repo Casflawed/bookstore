@@ -18,7 +18,6 @@ public class VerifyCode extends HttpServlet {
     String username = req.getParameter("username");
     if (token != null && token.equalsIgnoreCase(code)) {
       System.out.println("保存到数据库：" + username);
-
       resp.sendRedirect(req.getContextPath() + "/pages/user/regist_success.html");
     } else {
       System.out.println("请不要重复提交表单");

@@ -29,9 +29,9 @@
 				return false;
 			}
 // 确认密码
-			let repwdText = $("#repwd").val();
+			let repwdText = $("#repwd")[0].value;
 			if (repwdText != passwordText){
-				$(".errorMsg").text("确认密码和密码不一致");
+				$(".errorMsg")[0].innerText = "确认密码与密码不一致";
 				return false;
 			}
 // 验证邮箱
@@ -41,8 +41,8 @@
 				$(".errorMsg").text("邮箱格式错误");
 				return false;
 			}
-
 		})
+// 验证码切换
 		$("#verify").click(function () {
 			/**
 			 * 在事件响应的 function 函数中有一个 this 对象。这个 this 对象，是当前正在响应事件的 dom 对象
