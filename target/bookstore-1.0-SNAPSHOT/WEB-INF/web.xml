@@ -11,4 +11,12 @@
     <servlet-name>KaptchaServlet</servlet-name>
     <url-pattern>/verifycode.jpg</url-pattern>
   </servlet-mapping>
+    <servlet>
+        <servlet-name>VerifyCode</servlet-name>
+        <servlet-class>VerifyCode</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyCode</servlet-name>
+        <url-pattern>/verifyCode</url-pattern>
+    </servlet-mapping>
 </web-app>
