@@ -15,7 +15,7 @@ public class User {
     this.password = password;
     this.email = email;
   }
-  
+
   public Integer getId() {
     return id;
   }
