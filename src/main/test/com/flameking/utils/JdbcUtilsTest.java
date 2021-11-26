@@ -1,4 +1,5 @@
-import com.flameking.utils.JdbcUtils;
+package com.flameking.utils;
+
 import org.junit.Test;
 
 import java.sql.Connection;
