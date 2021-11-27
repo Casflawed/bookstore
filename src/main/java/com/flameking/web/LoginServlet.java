@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
     String username = req.getParameter("username");
     String password = req.getParameter("password");
     if (userService.login(username, password)) {
-      req.getRequestDispatcher("/pages/user/login_success.html").forward(req, resp);
+      req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
     }else {
       System.out.println("用户名错误或密码错误");
     }

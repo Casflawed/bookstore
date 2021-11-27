@@ -33,16 +33,16 @@ public class RegisterServlet extends HttpServlet {
 
     if (userService.registeredUsername(username)) {
       System.out.println("用户名已注册");
-      resp.sendRedirect(req.getContextPath() + "/pages/user/register.html");
+      resp.sendRedirect(req.getContextPath() + "/pages/user/register.jsp");
     } else if (userService.registeredEmail(email)) {
       System.out.println("邮箱已注册");
-      resp.sendRedirect(req.getContextPath() + "/pages/user/register.html");
+      resp.sendRedirect(req.getContextPath() + "/pages/user/register.jsp");
     }else if(token != null && token.equalsIgnoreCase(code)) {
 // 注册成功
       userService.register(username, password, email);
-      resp.sendRedirect(req.getContextPath() + "/pages/user/register_success.html");
+      resp.sendRedirect(req.getContextPath() + "/pages/user/register_success.jsp");
     } else {
-      resp.sendRedirect(req.getContextPath() + "/pages/user/register.html");
+      resp.sendRedirect(req.getContextPath() + "/pages/user/register.jsp");
       System.out.println("验证码错误");
     }
   }
