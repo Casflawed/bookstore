@@ -15,13 +15,14 @@
  * 2. 字符 2~16(字符包括：大小写字母，下划线，中划线)
  * 要么出现中文，要么只有字符
  */
+// 验证用户名格式
 			var usernamePatt = /^[\u4E00-\u9FA5]{2,10}$|^[a-zA-Z_-]{2,16}$/;
 			let usernameText = $("#username").val();
 			if (!usernamePatt.test(usernameText)){
 				$(".errorMsg").text("用户名不合法");
 				return false;
 			}
-// 验证密码
+// 验证密码格式
 			var passwordPatt = /^[a-zA-Z0-9]{6,16}$/;
 			let passwordText = $("#password").val();
 			if (!passwordPatt.test(passwordText)){
@@ -34,14 +35,17 @@
 				$(".errorMsg")[0].innerText = "确认密码与密码不一致";
 				return false;
 			}
-// 验证邮箱
+// 验证邮箱格式
 			var emailPatt = /^\w+@\w+\.[a-zA-Z]{3}(\.[a-zA-Z]{2})?$/;
 			let emailText = $("#email").val();
 			if (!emailPatt.test(emailText)){
 				$(".errorMsg").text("邮箱格式错误");
 				return false;
 			}
+// 验证码检查
+
 		})
+
 // 验证码切换
 		$("#verify").click(function () {
 			/**
@@ -50,7 +54,7 @@
 			 * alert(this.src);
 			 * @type {string}
 			 */
-			// this.src = "http://localhost:8080/bookstore/verifycode.jpg?d=" + new Date();
+			// this.src = "http://localhost/bookstore/verifycode.jpg?d=" + new Date();
 			// 说是加上时间戳能跳过缓存，但是我下面这条也能实现啊！（🤔）
 			this.src = this.src;
 		})
@@ -83,17 +87,17 @@
 								<span class="errorMsg"></span>
 							</div>
 							<div class="form">
-								<form action="/bookstore/verifyCode" method="post">
+								<form action="/bookstore/register" method="post">
 									<label>用户名称：</label>
-									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" id="username" />
+									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" id="username" value="wangwei" />
 									<br />
 									<br />
 									<label>用户密码：</label>
-									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" id="password" />
+									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" id="password" value="123456"/>
 									<br />
 									<br />
 									<label>确认密码：</label>
-									<input class="itxt" type="password" placeholder="确认密码" autocomplete="off" tabindex="1" name="repwd" id="repwd" />
+									<input class="itxt" type="password" placeholder="确认密码" autocomplete="off" tabindex="1" name="repwd" id="repwd" value="123456"/>
 									<br />
 									<br />
 									<label>电子邮件：</label>
@@ -102,7 +106,7 @@
 									<br />
 									<label>验证码：</label>
 									<input class="itxt" type="text" style="width: 100px;" name="code" id="code"/>
-									<img id="verify" alt="" src="http://localhost:8080/bookstore/verifycode.jpg" style="float: right;
+									<img id="verify" alt="nothing" src="http://localhost/bookstore/verifycode.jpg" style="float: right;
 									margin-right: 40px; width: 80px; height: 40px;">
 									<br />
 									<br />
