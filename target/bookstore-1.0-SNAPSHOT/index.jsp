@@ -1,8 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>书城首页</title>
+<base href="http://localhost/bookstore/">
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
 </head>
 <body>
