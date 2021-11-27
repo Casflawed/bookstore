@@ -22,20 +22,31 @@ public class UserDaoImpl extends BaseDao implements UserDao {
    * @return 查询成功返回 User 对象；<br/>否则返回 null；
    */
   @Override
-  public User queryForUserByName(String username) {
+  public User queryForUserByUsername(String username) {
     String sql = "select id, username, password, email from t_user where username=?";
     return queryForOne(User.class, sql, username);
   }
 
   /**
-   * 根据用户名和密码查询用户
-   * @param username
-   * @param pwd
+   * 通过邮箱查询用户
+   * @param email
    * @return 查询成功返回 User 对象；<br/>否则返回 null；
    */
   @Override
-  public User queryForUserByNameAndPassword(String username, String pwd) {
+  public User queryForUserByEmail(String email) {
+    String sql = "select id, username, password, email from t_user where email=?";
+    return queryForOne(User.class, sql, email);
+  }
+
+  /**
+   * 根据用户名和密码查询用户
+   * @param username
+   * @param password
+   * @return 查询成功返回 User 对象；<br/>否则返回 null；
+   */
+  @Override
+  public User queryForUserByUsernameAndPassword(String username, String password) {
     String sql = "select id, username, password, email from t_user where username=? and password=?";
-    return queryForOne(User.class, sql, username, pwd);
+    return queryForOne(User.class, sql, username, password);
   }
 }
