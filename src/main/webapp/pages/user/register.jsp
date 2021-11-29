@@ -107,7 +107,7 @@
                         <br/>
                         <label>验证码：</label>
                         <input class="itxt" type="text" style="width: 100px;" name="code" id="code"/>
-                        <img id="verify" alt="nothing" src="http://localhost/bookstore/verifycode.jpg" style="float: right;
+                        <img id="verify" alt="nothing" src="<%=basePath%>verifycode.jpg" style="float: right;
 									margin-right: 40px; width: 80px; height: 40px;">
                         <br/>
                         <br/>
