@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>尚硅谷会员登录页面</title>
-    <base href="http://localhost/bookstore/">
-
-    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <%@ include file="../common/header.jsp" %>
 </head>
 <body>
 <div id="login_header">
@@ -14,11 +12,9 @@
 </div>
 
 <div class="login_banner">
-
     <div id="l_content">
         <span class="login_word">欢迎登录</span>
     </div>
-
     <div id="content">
         <div class="login_form">
             <div class="login_box">
@@ -45,15 +41,11 @@
                         <input type="submit" value="登录" id="sub_btn"/>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-<div id="bottom">
-	<span>
-		尚硅谷书城.Copyright &copy;2021
-	</span>
-</div>
+<%@ include file="../common/footer.jsp" %>
+
 </body>
 </html>

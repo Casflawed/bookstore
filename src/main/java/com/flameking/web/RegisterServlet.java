@@ -42,8 +42,8 @@ public class RegisterServlet extends HttpServlet {
       userService.register(username, password, email);
       resp.sendRedirect(req.getContextPath() + "/pages/user/register_success.jsp");
     } else {
-      resp.sendRedirect(req.getContextPath() + "/pages/user/register.jsp");
       System.out.println("验证码错误");
+      resp.sendRedirect(req.getContextPath() + "/pages/user/register.jsp");
     }
   }
 }
